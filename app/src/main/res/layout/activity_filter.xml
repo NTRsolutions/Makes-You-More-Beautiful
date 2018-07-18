@@ -11,17 +11,21 @@
         android:layout_width="wrap_content"
         android:layout_height="71dp"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/home"
         android:layout_marginEnd="111dp"
+        android:layout_marginRight="111dp"
         android:src="@drawable/newfolder" />
 
     <ImageView
-        android:id="@+id/home"
+        android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="19dp"
         android:src="@drawable/home" />
 
@@ -29,8 +33,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
         android:layout_marginTop="32dp"
         android:text="SAVE"
         android:textColor="#ffffff"
@@ -74,6 +80,7 @@
         app:fontFamily="sans-serif" />
 
     <ImageView
+        android:id="@+id/photoImageView"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="-100dp"
@@ -91,14 +98,12 @@
         android:layout_marginStart="29dp"
         android:src="@drawable/filterphoto" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="99dp"
-        android:layout_marginStart="29dp"
-        android:src="@drawable/filterphoto" />
+    <!--<ImageView-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_alignTop="@+id/smallFilterPhoto"-->
+        <!--android:layout_toStartOf="@+id/EditTv"-->
+        <!--android:src="@drawable/filterphoto" />-->
 
     <View
         android:id="@+id/divider3"
