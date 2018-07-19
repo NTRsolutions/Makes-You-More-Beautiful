@@ -6,18 +6,26 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class MenuActivity extends AppCompatActivity {
-    public static final int REQUEST_IMAGE_CAPTURE = 1;
+    public static final int REQUEST_IMAGE_CAPTURE = 100;
     public ImageView cameraButton;
     public ImageView fileButton;
-//    public Bitmap imageBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +51,17 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
+
+            Bitmap bitmap=(Bitmap)data.getExtras().get("data");
+
             Intent imageIntent = new Intent(MenuActivity.this, FilterActivity.class);
-            imageIntent.putExtra("image", imageBitmap);
+            imageIntent.putExtra("image", bitmap);
             startActivity(imageIntent);
+            finish();
 
         }
     }
+
+
 
 }

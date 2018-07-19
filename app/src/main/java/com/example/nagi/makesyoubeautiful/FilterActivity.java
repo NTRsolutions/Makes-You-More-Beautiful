@@ -24,10 +24,10 @@ public class FilterActivity extends AppCompatActivity {
         photoIv = findViewById(R.id.photoImageView);
 
 
-        smallFilterIv = findViewById(R.id.smallFilterPhoto);
+//        smallFilterIv = findViewById(R.id.smallFilterPhoto);
         homeButton = findViewById(R.id.homeButton);
 
-        smallFilterIv.setImageResource(R.drawable.filterphoto);
+//        smallFilterIv.setImageResource(R.drawable.filterphoto);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,14 +38,9 @@ public class FilterActivity extends AppCompatActivity {
             }
         });
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            Bitmap image = (Bitmap) extras.get("image");
-            if (image != null) {
-                photoIv.setImageBitmap(image);
-            }
-        }
-
+        Intent intent = getIntent();
+        Bitmap bitmap = (Bitmap) intent.getParcelableExtra("image");
+        photoIv.setImageBitmap(bitmap);
 
     }
 }
